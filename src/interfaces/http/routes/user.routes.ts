@@ -24,4 +24,5 @@ export async function userRoutes(app: FastifyInstance) {
         // Remove password from response for security
         res.code(201).send({newUserResponse});
     })
+
 }   

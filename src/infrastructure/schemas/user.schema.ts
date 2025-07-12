@@ -1,6 +1,7 @@
 import { relations } from "drizzle-orm";
 import { pgTable,serial, text, timestamp,boolean } from "drizzle-orm/pg-core";
 import { urls } from "./url.schema";
+import { refreshTokens } from "./refreshtoken.schema";
 
 export const users = pgTable("users", {
   id: serial("id").primaryKey(),
@@ -13,5 +14,6 @@ export const users = pgTable("users", {
 });
 
 export const userRelations = relations(users, ({ many }) => ({
-    urls: many(urls)
+    urls: many(urls),
+    refreshTokens: many(refreshTokens)
 }));

@@ -8,16 +8,21 @@
     "debug": "bun --hot --inspect src/index.ts"
   },
   "devDependencies": {
+    "@eslint/js": "^9.30.1",
     "@types/bun": "latest",
     "drizzle-kit": "^0.31.1",
-    "pg": "^8.16.2"
+    "eslint": "^9.30.1",
+    "pg": "^8.16.2",
+    "typescript-eslint": "^8.36.0"
   },
   "peerDependencies": {
-    "typescript": "^5"
+    "typescript": "^5.8.3"
   },
   "dependencies": {
     "@fastify/awilix": "^8.0.0",
+    "@fastify/cookie": "^11.0.2",
     "@fastify/cors": "^11.0.1",
+    "@fastify/jwt": "^9.1.0",
     "@types/bcrypt": "^5.0.2",
     "awilix": "^12.0.5",
     "bcrypt": "^6.0.0",
