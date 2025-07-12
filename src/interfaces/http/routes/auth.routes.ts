@@ -31,6 +31,7 @@ export async function authRoutes(app: FastifyInstance) {
             return res.code(400).send('No refresh token provided');
         }
         await authUseCase.revokeRefreshToken(refreshToken);
+    //maybe move to other function too
          res.clearCookie('token', {
             domain: 'localhost',
          });
