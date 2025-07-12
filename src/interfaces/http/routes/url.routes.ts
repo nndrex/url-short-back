@@ -13,11 +13,6 @@ export async function urlRoutes(app: FastifyInstance) {
         const allUrls = await urlUseCase.getAll();
         res.code(200).send({allUrls});
     });
+    
 
-    // app.post('/', async (req:FastifyRequest<{Body:postUrlBody}>, res:FastifyReply) => {
-    //     const urlUseCase: UrlUseCase = app.diContainer.resolve('urlUseCase');
-    //     const {domain, fullUrl, userId} = req.body;
-    //     const newUrl = await urlUseCase.create({domain, fullUrl, userId});
-    //     res.code(201).send({newUrl});
-    // }
 }
