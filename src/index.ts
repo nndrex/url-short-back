@@ -3,26 +3,21 @@ import { urlRoutes } from '@interfaces/http/routes/url.routes';
 import { userRoutes } from '@interfaces/http/routes/user.routes';
 import {registerDI} from '@config/awilix.config';
 import cors from '@fastify/cors';
-import jwt from '@fastify/jwt';
 import cookie from '@fastify/cookie';
+import { authRoutes } from '@interfaces/http/routes/auth.routes';
+import jwt from '@config/jwt';
 
 const app = Fastify({ logger: true });
 
 await registerDI(app);
-await app.register(jwt,{
-  secret: Bun.env.JWT_SECRET || 'secretjwtdefault', 
-  cookie: {
-    cookieName: 'token', // Name of the cookie to store the JWT 
-    signed: false, // Set to true if you want to sign the cookie
-  },
-})  
-
+await app.register(jwt);
 await app.register(cookie)
 
 await app.register(cors, {
   origin: '*', // Allow all origins for simplicity, adjust as needed
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed methods
 });
+await app.register(authRoutes, { prefix: '/api/auth' });
 await app.register(urlRoutes, { prefix: '/api/urls' });
 await app.register(userRoutes, { prefix: '/api/users' });
 

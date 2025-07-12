@@ -1,6 +1,5 @@
 // src/config/awilix.ts
 import { fastifyAwilixPlugin  } from '@fastify/awilix';
-import { InjectionMode } from 'awilix';
 import { FastifyInstance } from 'fastify';
 import { container } from '../container';
 

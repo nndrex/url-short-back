@@ -22,12 +22,13 @@ export default class AuthUseCase {
         console.log(`Logging in user with email: ${email}`);
         return validUser;
     }
-    async createRefreshToken(userId: number, expiresAt: Date) {
+    async createRefreshToken(userId: number, expiresAt: Date): Promise<string> {
         const randomBytesAsync = promisify(randomBytes);
         const refreshToken=  await randomBytesAsync(32).then(buffer => buffer.toString('hex'));
         console.log(`Creating refresh token for user ID: ${userId}`);        
 
-        return this.refreshTokenRepository.createRefreshToken(userId, refreshToken, expiresAt);
+        await this.refreshTokenRepository.createRefreshToken(userId, refreshToken, expiresAt);
+        return refreshToken;
     }
 
     async findRefreshToken(token: string) {
