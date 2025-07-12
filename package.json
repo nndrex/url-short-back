@@ -1,0 +1,25 @@
+{
+  "name": "url-short-back",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "bun --hot src/index.ts",
+    "debug": "bun --hot --inspect src/index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "drizzle-kit": "^0.31.1",
+    "pg": "^8.16.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@fastify/awilix": "^8.0.0",
+    "@fastify/cors": "^11.0.1",
+    "awilix": "^12.0.5",
+    "drizzle-orm": "^0.44.2",
+    "fastify": "^5.4.0"
+  }
+}
