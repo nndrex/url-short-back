@@ -5,5 +5,4 @@ export interface IGetUrlQuery {
 export interface postUrlBody {
     domain: string;
     fullUrl: string;
-    userId: number;
 }

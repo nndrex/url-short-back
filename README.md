@@ -8,7 +8,7 @@
 
 ## About
 
-This is a backend for a url shortener, this a project for learning and aplying previous knowledge, while i know most of the things in the stack are not for production ready or experimental, i want to avoid work burnout using diferent libraries or frameworks :
+This is a backend for an URL shortener. This project is intended for learning and applying previous knowledge. While I know most of the technologies in the stack are not production-ready or are experimental, i wanted to avoid work burnout by using different libraries and frameworks.
 
 ## Architecture
 

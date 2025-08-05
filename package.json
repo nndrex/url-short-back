@@ -23,6 +23,7 @@
     "@fastify/cookie": "^11.0.2",
     "@fastify/cors": "^11.0.1",
     "@fastify/jwt": "^9.1.0",
+    "@sinclair/typebox": "^0.34.38",
     "@types/bcrypt": "^5.0.2",
     "awilix": "^12.0.5",
     "bcrypt": "^6.0.0",
