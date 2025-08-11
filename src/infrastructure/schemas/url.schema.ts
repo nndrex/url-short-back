@@ -7,7 +7,7 @@ export const urls = pgTable("urls", {
     domain:text("domain").notNull().unique(),
     fullUrl:text("full_url").notNull(),
     isActive: boolean("is_active").default(true).notNull(),
-    userId: integer("user_id").notNull(),
+    userId: integer("user_id").notNull().references(() => users.id),
 });
 
 export const urlRelations = relations(urls, ({ one }) => ({
